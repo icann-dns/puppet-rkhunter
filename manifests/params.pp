@@ -80,11 +80,6 @@ class rkhunter::params {
     }
     default  : {
       $linux                             = false
-
-      # Misc
-      $rkhunter_bin                      = '/usr/bin/rkhunter'
-      $log_file                          = '/var/log/rkhunter/rkhunter.log'
-      $package_manager                   = 'NONE'
     }
   }
 
@@ -95,6 +90,7 @@ class rkhunter::params {
   $remote_syslog                         = false
   $tftp                                  = false
   $check_mk                              = false
+  $check_mk_script                       = '/etc/xinetd.d/check_mk'
   $oracle_xe                             = false
   $sap_igs                               = false
   $sap_icm                               = false
@@ -105,5 +101,4 @@ class rkhunter::params {
   $disable_tests                         = ['suspscan', 'hidden_procs', 'deleted_files', 'packet_cap_apps', 'apps']
   $cron_daily_run                        = 'y'
   $cron_db_update                        = 'y'
-
 }
